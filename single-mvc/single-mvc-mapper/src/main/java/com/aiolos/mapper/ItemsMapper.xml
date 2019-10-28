@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.aiolos.mapper.ItemsMapper" >
-    <resultMap id="BaseResultMap" type="com.aiolos.pojo.Items" >
+<mapper namespace="ItemsMapper" >
+    <resultMap id="BaseResultMap" type="Items" >
         <id column="id" property="id" jdbcType="VARCHAR" />
         <result column="name" property="name" jdbcType="VARCHAR" />
         <result column="counts" property="counts" jdbcType="INTEGER" />
@@ -67,7 +67,7 @@
     <sql id="Base_Column_List" >
         id, name, counts
     </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.aiolos.pojo.ItemsExample" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="ItemsExample" >
         select
         <if test="distinct" >
             distinct
@@ -91,19 +91,19 @@
         delete from items
         where id = #{id,jdbcType=VARCHAR}
     </delete>
-    <delete id="deleteByExample" parameterType="com.aiolos.pojo.ItemsExample" >
+    <delete id="deleteByExample" parameterType="ItemsExample" >
         delete from items
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
-    <insert id="insert" parameterType="com.aiolos.pojo.Items" >
+    <insert id="insert" parameterType="Items" >
         insert into items (id, name, counts
         )
         values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{counts,jdbcType=INTEGER}
         )
     </insert>
-    <insert id="insertSelective" parameterType="com.aiolos.pojo.Items" >
+    <insert id="insertSelective" parameterType="Items" >
         insert into items
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -128,7 +128,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.aiolos.pojo.ItemsExample" resultType="java.lang.Integer" >
+    <select id="countByExample" parameterType="ItemsExample" resultType="java.lang.Integer" >
         select count(*) from items
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
@@ -160,7 +160,7 @@
             <include refid="Update_By_Example_Where_Clause" />
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.aiolos.pojo.Items" >
+    <update id="updateByPrimaryKeySelective" parameterType="Items" >
         update items
         <set >
             <if test="name != null" >
@@ -172,14 +172,14 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.aiolos.pojo.Items" >
+    <update id="updateByPrimaryKey" parameterType="Items" >
         update items
         set name = #{name,jdbcType=VARCHAR},
         counts = #{counts,jdbcType=INTEGER}
         where id = #{id,jdbcType=VARCHAR}
     </update>
 
-    <update id="reduceCounts" parameterType="com.aiolos.pojo.Items" >
+    <update id="reduceCounts" parameterType="Items" >
         update items set counts=counts-#{buyCounts} where id=#{id}
     </update>
 </mapper>
