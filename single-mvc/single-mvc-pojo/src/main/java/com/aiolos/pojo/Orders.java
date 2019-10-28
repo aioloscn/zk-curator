@@ -1,4 +1,4 @@
-package com.aiolos.item.pojo;
+package com.aiolos.pojo;
 
 /**
  * @author Aiolos

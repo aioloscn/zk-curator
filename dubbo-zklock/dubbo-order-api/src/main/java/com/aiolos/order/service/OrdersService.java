@@ -1,6 +1,6 @@
 package com.aiolos.order.service;
 
-import com.aiolos.pojo.Orders;
+import com.aiolos.order.pojo.Orders;
 
 /**
  * @author Aiolos

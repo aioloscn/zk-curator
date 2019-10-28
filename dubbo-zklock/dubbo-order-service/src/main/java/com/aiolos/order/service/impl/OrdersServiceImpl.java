@@ -1,8 +1,8 @@
 package com.aiolos.order.service.impl;
 
-import com.aiolos.mapper.OrdersMapper;
+import com.aiolos.order.mapper.OrdersMapper;
 import com.aiolos.order.service.OrdersService;
-import com.aiolos.pojo.Orders;
+import com.aiolos.order.pojo.Orders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

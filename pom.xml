@@ -9,6 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>single-mvc</module>
+    <module>dubbo-zklock</module>
   </modules>
   <packaging>pom</packaging>
 

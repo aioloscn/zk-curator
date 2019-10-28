@@ -1,7 +1,7 @@
-package com.aiolos.item.mapper;
+package com.aiolos.mapper;
 
-import com.aiolos.item.pojo.Items;
-import com.aiolos.item.pojo.ItemsExample;
+import com.aiolos.pojo.Items;
+import com.aiolos.pojo.ItemsExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

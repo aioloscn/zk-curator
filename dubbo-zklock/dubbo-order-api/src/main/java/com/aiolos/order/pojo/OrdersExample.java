@@ -1,4 +1,4 @@
-package com.aiolos.pojo;
+package com.aiolos.order.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
