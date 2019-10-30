@@ -149,7 +149,7 @@ public class CuratorOperator {
         final PathChildrenCache childrenCache = new PathChildrenCache(cto.client, nodePath, true);
 
         /**
-         * POST_INITIALIZED_EVENT: 异步初始化，初始化之后会触发事件，启动时childrenCache.getCurrentData()没有数据，会监听自己诶单变化
+         * POST_INITIALIZED_EVENT: 异步初始化，初始化之后会触发事件，启动时childrenCache.getCurrentData()没有数据，会监听自己子节点变化
          * NORMAL: 异步初始化，启动时childrenCache.getCurrentData()没有数据，也不监听子节点变化
          * BUILD_INITIAL_CACHE:同步初始化，启动时childrenCache.getCurrentData()有数据，但不能监听数据变化
          */

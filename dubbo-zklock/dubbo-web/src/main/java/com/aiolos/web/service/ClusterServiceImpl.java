@@ -1,5 +1,6 @@
 package com.aiolos.web.service;
 
+import com.aiolos.curator.utils.DistributedLock;
 import com.aiolos.item.service.ItemsService;
 import com.aiolos.order.service.OrdersService;
 import org.slf4j.Logger;
@@ -23,18 +24,15 @@ public class ClusterServiceImpl implements ClusterService {
     @Autowired
     private OrdersService ordersService;
 
-//    @Autowired
-//    private DistributedLock distributedLock;
+    @Autowired
+    private DistributedLock distributedLock;
 
     @Override
     @Transactional
     public boolean displayBuy(String itemId) {
 
-//		System.out.println("linux-pc...");
-        System.out.println("windows-pc...");
-
         // 执行订单流程之前使得当前业务获得分布式锁
-//        distributedLock.getLock();
+        distributedLock.getLock();
 
         int buyCounts = 6;
 
@@ -44,7 +42,7 @@ public class ClusterServiceImpl implements ClusterService {
             log.info("库存剩余{}件，用户需求量{}件，库存不足，订单创建失败...",
                     stockCounts, buyCounts);
             // 释放锁，让下一个请求获得锁
-//            distributedLock.releaseLock();
+            distributedLock.releaseLock();
             return false;
         }
 
@@ -56,7 +54,7 @@ public class ClusterServiceImpl implements ClusterService {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-//            distributedLock.releaseLock();
+            distributedLock.releaseLock();
         }
 
         // 3. 创建订单成功后，扣除库存
@@ -66,12 +64,12 @@ public class ClusterServiceImpl implements ClusterService {
         } else {
             log.info("订单创建失败...");
             // 释放锁，让下一个请求获得锁
-//            distributedLock.releaseLock();
+            distributedLock.releaseLock();
             return false;
         }
 
         // 释放锁，让下一个请求获得锁
-//        distributedLock.releaseLock();
+        distributedLock.releaseLock();
         return true;
     }
 }

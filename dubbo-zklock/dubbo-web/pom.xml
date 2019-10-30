@@ -98,27 +98,7 @@
     <build>
         <finalName>dubbo-web</finalName>
 
-        <!--<resources>
-            <resource>
-                <targetPath>${project.build.directory}/classes</targetPath>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.xml</include>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-            <resource>
-                <targetPath>${project.build.directory}/classes/META-INF/spring</targetPath>
-                <directory>src/main/resources/spring</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>spring-context.xml</include>
-                </includes>
-            </resource>
-        </resources>
-
-        <plugins>
+        <!--<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -159,6 +139,26 @@
                 </executions>
             </plugin>
         </plugins>-->
+
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.ini</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
 
         <plugins>
             <plugin>

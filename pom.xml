@@ -25,12 +25,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.apache.curator</groupId>
       <artifactId>curator-framework</artifactId>
       <version>4.0.0</version>
@@ -108,7 +102,7 @@
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
-      <version>1.2.2</version>
+      <version>1.3.1</version>
     </dependency>
     <dependency>
       <groupId>com.github.miemiedev</groupId>
@@ -124,7 +118,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.41</version>
+      <version>8.0.13</version>
     </dependency>
 
     <!-- 连接池 阿里巴巴数据源 全世界最牛逼的data source 没有之一 -->
@@ -137,37 +131,37 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <version>4.3.13.RELEASE</version>
     </dependency>
     <!-- JSP相关 -->
     <dependency>

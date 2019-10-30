@@ -1,6 +1,7 @@
 package com.aiolos.web.controller;
 
 import com.aiolos.common.utils.CustomizeJSONResult;
+import com.aiolos.curator.utils.ZKCurator;
 import com.aiolos.item.pojo.Items;
 import com.aiolos.item.service.ItemsService;
 import com.aiolos.order.pojo.Orders;
@@ -31,8 +32,8 @@ public class PayController {
     @Autowired
     private ClusterService clusterService;
 
-//    @Autowired
-//    private ZKCurator zkCurator;
+    @Autowired
+    private ZKCurator zkCurator;
 
     @RequestMapping("/test")
     @ResponseBody
@@ -76,14 +77,14 @@ public class PayController {
         return CustomizeJSONResult.ok(result ? "订单创建成功..." : "订单创建失败...");
     }
 
-//    /**
-//     * @Description: 判断zk是否连接
-//     */
-//    @RequestMapping("/isZKAlive")
-//    @ResponseBody
-//    public CustomizeJSONResult isZKAlive() {
-//        boolean isAlive = zkCurator.isZKAlive();
-//        String result = isAlive ? "连接" : "断开";
-//        return CustomizeJSONResult.ok(result);
-//    }
+    /**
+     * @Description: 判断zk是否连接
+     */
+    @RequestMapping("/isZKAlive")
+    @ResponseBody
+    public CustomizeJSONResult isZKAlive() {
+        boolean isAlive = zkCurator.isZKAlive();
+        String result = isAlive ? "连接" : "断开";
+        return CustomizeJSONResult.ok(result);
+    }
 }
